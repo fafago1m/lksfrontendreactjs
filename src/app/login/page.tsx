@@ -15,14 +15,6 @@ function Login() {
 
   const API = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-  useEffect(() => {
-    const token = localStorage.getItem("auth_token");
-    const role = localStorage.getItem("user_role");
-
-    if (token && role) {
-      router.push(role === "admin" ? "/dashboard/admin" : "/home");
-    }
-  }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,22 +40,10 @@ function Login() {
       const { token, role, name, email_verified_at } = res.data;
 
       localStorage.setItem("auth_token", token);
-      localStorage.setItem("user_role", role);
       localStorage.setItem("user_name", name);
       if (!email_verified_at) {
         router.push("/verify-email");
         return;
-      }
-      
-
-      if (role === "admin") {
-        router.push("/dashboard/admin");
-      } else if (role === "developer") {
-        router.push("/dashboard/developer");
-      } else if (role === "user") {
-        router.push("/home");
-      } else {
-        router.push("/");
       }
       
     } catch (err: any) {

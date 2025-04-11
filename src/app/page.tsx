@@ -1,12 +1,10 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import Navbar from './components/Navbar';
 import { PaperAirplaneIcon, TagIcon } from '@heroicons/react/16/solid';
-import GameList from '@/app/components/GameList';
-import Testimoni from './components/Testimoni';
-import Footer from './components/Footer';
 import { GamepadIcon } from 'lucide-react';
+import Navbar from './components/Navbar';
+import Testimoni from './components/Testimoni';
 
 export default function Home() {
   return (
@@ -100,12 +98,8 @@ export default function Home() {
 
 
       {/* List Game */}
-      <GameList />
 
-      < Testimoni />
-    < Footer />
-
-
+< Testimoni />
 
     </>
   );
