@@ -24,17 +24,14 @@ export default function Navbar() {
 
   useEffect(() => {
     const token = localStorage.getItem("auth_token");
-    const role = localStorage.getItem("user_role");
     const name = localStorage.getItem("user_name");
 
     setIsAuthenticated(!!token);
-    if (role) setUserRole(role);
     if (name) setUserName(name);
   }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("auth_token");
-    localStorage.removeItem("user_role");
     localStorage.removeItem("user_name");
     router.push("/login");
   };
@@ -108,28 +105,6 @@ export default function Navbar() {
                 {isDropdownOpen && (
                   <div className="absolute right-0 top-full mt-2 min-w-[180px] bg-white dark:bg-gray-800 rounded-lg shadow-lg z-50">
                     <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
-                      {userRole === "admin" && (
-                        <li>
-                          <Link
-                            href="/dashboard/admin"
-                            className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
-                          >
-                            <LayoutDashboard className="w-4 h-4" />
-                            Dashboard Admin
-                          </Link>
-                        </li>
-                      )}
-                      {userRole === "developer" && (
-                        <li>
-                          <Link
-                            href="/dashboard/developer"
-                            className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
-                          >
-                            <Code2 className="w-4 h-4" />
-                            Dashboard Developer
-                          </Link>
-                        </li>
-                      )}
                       {userRole === "user" && (
                         <li>
                           <Link
