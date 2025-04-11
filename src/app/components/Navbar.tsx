@@ -71,8 +71,7 @@ export default function Navbar() {
               {[
                 { href: "/", label: "Home" },
                 { href: "/game", label: "Game" },
-                { href: "/Testimoni", label: "Testimoni" },
-                { href: "/contact", label: "Contact" },
+
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link
@@ -108,7 +107,7 @@ export default function Navbar() {
                       {userRole === "user" && (
                         <li>
                           <Link
-                            href="/profile"
+                            href="/home"
                             className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
                           >
                             <UserCircle className="w-4 h-4" />

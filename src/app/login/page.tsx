@@ -26,7 +26,7 @@ function Login() {
       await axios.get(`${API}/sanctum/csrf-cookie`, { withCredentials: true });
 
       const res = await axios.post(
-        `${API}/api/login`,
+        `${API}/api/v1/auth/signin`,
         { email, password },
         {
           withCredentials: true,
@@ -37,12 +37,12 @@ function Login() {
         }
       );
 
-      const { token, role, name, email_verified_at } = res.data;
+      const { token, name, email_verified_at } = res.data;
 
       localStorage.setItem("auth_token", token);
       localStorage.setItem("user_name", name);
       if (!email_verified_at) {
-        router.push("/verify-email");
+        router.push("/");
         return;
       }
       
@@ -115,12 +115,7 @@ function Login() {
               <input type="checkbox" className="h-4 w-4 text-blue-600 border-gray-300 rounded" />
               <span className="ml-2">Ingat saya</span>
             </label>
-            <a
-              onClick={() => router.push('/forgot-password')}
-              className="text-blue-600 hover:text-blue-800 font-medium cursor-pointer transition-colors"
-            >
-              Lupa password?
-            </a>
+            
           </div>
 
           <button
