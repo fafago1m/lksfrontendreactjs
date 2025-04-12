@@ -71,6 +71,7 @@ export default function Navbar() {
               {[
                 { href: "/", label: "Home" },
                 { href: "/game", label: "Game" },
+                { href: "/propile", label: "Profile" },
 
               ].map(({ href, label }) => (
                 <li key={href}>

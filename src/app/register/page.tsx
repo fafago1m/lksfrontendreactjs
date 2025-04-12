@@ -10,7 +10,7 @@ const Register = () => {
     name: '',
     email: '',
     password: '',
-    role: 'user',
+    role: 'pemain',
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [message, setMessage] = useState('');
