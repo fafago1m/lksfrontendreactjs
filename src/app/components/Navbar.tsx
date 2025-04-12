@@ -71,8 +71,7 @@ export default function Navbar() {
               {[
                 { href: "/", label: "Home" },
                 { href: "/game", label: "Game" },
-                { href: "/Testimoni", label: "Testimoni" },
-                { href: "/contact", label: "Contact" },
+
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link
@@ -105,17 +104,17 @@ export default function Navbar() {
                 {isDropdownOpen && (
                   <div className="absolute right-0 top-full mt-2 min-w-[180px] bg-white dark:bg-gray-800 rounded-lg shadow-lg z-50">
                     <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
-                      {userRole === "user" && (
+                   
                         <li>
                           <Link
-                            href="/profile"
+                            href="/propile"
                             className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
                           >
                             <UserCircle className="w-4 h-4" />
                             Profil Saya
                           </Link>
                         </li>
-                      )}
+             
                       <li>
                         <button
                           onClick={handleLogout}

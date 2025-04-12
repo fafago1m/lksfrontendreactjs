@@ -30,7 +30,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/register`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/v1/auth/signup`,
         form,
         {
           headers: {
@@ -42,8 +42,8 @@ const Register = () => {
       );
     
       localStorage.setItem('auth_token', response.data.token);
-      toast.success('Registrasi berhasil! Silakan verifikasi email.');
-      router.push('/verify-email');
+      toast.success('Registrasi berhasil');
+      router.push('/');
     } catch (error: any) {
       const res = error.response;
       if (res?.status === 422 && res.data?.errors) {
