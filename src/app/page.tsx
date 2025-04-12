@@ -5,17 +5,18 @@ import { PaperAirplaneIcon, TagIcon } from '@heroicons/react/16/solid';
 import { GamepadIcon } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Testimoni from './components/Testimoni';
+import GameList from './components/GameList';
 
 export default function Home() {
   return (
     <>
       <Navbar />
 
-      {/* Hero Section */}
+
+
       <section className="bg-white dark:bg-gray-900 relative text-white overflow-hidden">
   <div className="max-w-screen-xl mx-auto px-4 pt-24 pb-16 sm:pt-32 lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center">
     
-    {/* Gambar di atas untuk mobile */}
     <div className="lg:hidden mb-10 flex justify-center">
       <Image
         src="/images/hero.png"
@@ -26,7 +27,6 @@ export default function Home() {
       />
     </div>
 
-    {/* Konten Teks */}
     <div className="lg:col-span-7 text-center lg:text-left">
       <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-tight mb-6">
         Permainan Game <br className="hidden sm:block" /> dalam Website Kamu
@@ -52,7 +52,6 @@ export default function Home() {
       </div>
     </div>
 
-    {/* Gambar samping di desktop */}
     <div className="hidden lg:col-span-5 lg:flex justify-center">
       <Image
         src="/images/hero.png"
@@ -64,15 +63,12 @@ export default function Home() {
     </div>
   </div>
 
-  {/* Hiasan bentuk bintang di latar belakang */}
+
   <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-[url('/images/stars-bg.png')] bg-cover bg-no-repeat pointer-events-none" />
 </section>
 
-      {/* About Us */}
-{/* About Us */}
 <section className="min-h-screen bg-gray-50 dark:bg-gray-800 flex items-center">
   <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6 py-20">
-    {/* Gambar Game */}
     <div className="flex justify-center order-1 md:order-none">
       <Image
        src="/images/istockphoto-1482455750-612x612.jpg"
@@ -84,7 +80,6 @@ export default function Home() {
       />
     </div>
 
-    {/* Deskripsi */}
     <div className="flex flex-col justify-center">
       <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
         Tentang Kami
@@ -96,8 +91,7 @@ export default function Home() {
   </div>
 </section>
 
-
-      {/* List Game */}
+< GameList />
 
 < Testimoni />
 
